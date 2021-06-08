@@ -6,7 +6,7 @@ class SearchForm extends Component {
     handleSubmit = e => {
         e.preventDefault();
         this.props.onSearch(this.query.value); //request photos of search term from Flickr
-        this.props.history.push(`/${this.query.value.replace(/ /g, '-')}`); //Update current URL to reflect search term
+        this.props.history.push(`/search/${this.query.value.replace(/ /g, '-')}`); //Update current URL to reflect search term
         e.currentTarget.reset();
     }
   

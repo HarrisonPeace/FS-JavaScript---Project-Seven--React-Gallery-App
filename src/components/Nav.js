@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import React from 'react';
 
 //Import close icon
 import closeSvg from '../close.svg'
@@ -9,7 +10,7 @@ function Nav({ searchTerms, addNavLink, removeNavLink }) {
       <ul id="nav-ul">
         { searchTerms.map(searchTerm => //map over saved search terms and create a Nav item for each
           <li id={searchTerm} key={searchTerm}>
-            <NavLink to={ `/${searchTerm.replace(/ /g, '-')}` }>{ searchTerm }</NavLink>
+            <NavLink to={ `/search/${searchTerm.replace(/ /g, '-')}` }>{ searchTerm }</NavLink>
             <img onClick={ () => removeNavLink(searchTerm) } src={closeSvg} alt='Remove Link' tabIndex="0"></img> {/* remove search item svg */}
           </li>)
         }
